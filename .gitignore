@@ -1,0 +1,15 @@
+venv/
+env/
+__pycache__/
+*.pyc
+*.log
+.vscode/
+.idea/
+*.DS_Store
+StudentsPerformance.csv
+*.ipynb
+.python-version
+Required Links & Important Code.txt
+student-performance-pred/
+model.pkl
+label_encoder.pkl
