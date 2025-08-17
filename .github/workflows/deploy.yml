@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt -c constraints.txt
       - name: Deploy to Heroku
         env:
           HEROKU_API_KEY: ${{secrets.HRKU-AAHBpMn50Huq0prGCGvDG_x4VWic3FTjia_BmNivYEKg_____wFx_M5x54BS}}
