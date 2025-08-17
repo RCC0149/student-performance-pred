@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Performance Predictor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        label {
+            font-size: 16px;
+            width: 150px;
+            text-align: right;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Performance Predictor</h1>
+        <form method="post" action="/predict">
+            <div class="form-row">
+                <label>Math Score:</label>
+                <input type="number" name="math" required>
+            </div>
+            <div class="form-row">
+                <label>Reading Score:</label>
+                <input type="number" name="reading" required>
+            </div>
+            <div class="form-row">
+                <label>Writing Score:</label>
+                <input type="number" name="writing" required>
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <p>{{ prediction_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
